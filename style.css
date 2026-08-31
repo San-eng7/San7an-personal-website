@@ -833,7 +833,7 @@ footer ul li{
 /* Use media queries for responsiveness */
 @media (max-width: 768px) {
   .div {
-    width: 500px; /* Adjust width for smaller screens *
+    width: 500px; 
     left: 10%;
   }
 }
