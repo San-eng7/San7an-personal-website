@@ -563,12 +563,13 @@ setTimeout(() => {
 }, 4000);
 
 
-musicPlay.addEventListener("click", () => {
-
-    backgroundMusic.play();
-
-    musicChoice.classList.remove("active");
-
+musicPlay.addEventListener("click", async () => {
+    try {
+        await backgroundMusic.play();
+        musicChoice.classList.remove("active");
+    } catch (error) {
+        console.log("Music could not play:", error);
+    }
 });
 
 musicNo.addEventListener("click", () => {
