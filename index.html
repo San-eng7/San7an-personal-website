@@ -6,9 +6,13 @@
      content="width=device-width, initial-scale=1.0">
     <title> my personal website </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="music.css">
+    <link rel="stylesheet" href="">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
      <link rel="alternate" href="index.html" hreflang="en">
-     <link rel="alternate" href="index-ku.html" hreflang="ku">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
      <!-- Preloader -->
@@ -20,34 +24,101 @@
       </div>
     </div>
 
+    <!-- MUSIC CHOICE -->
+<div class="music-choice" id="music-choice">
+
+    <div class="music-card">
+
+        <div class="music-icon">
+            <i class='bx bx-music'></i>
+        </div>
+
+        <div class="music-content">
+            <h3>Background Music</h3>
+            <p>Play music while exploring my world?</p>
+            <p>لە کاتی خوێندنەوەی ماڵپەڕەکە، دەتەوێت مۆسیقا لێ بدرێت؟</p>
+            <p>هل ترغب في تشغيل الموسيقى أثناء تصفح الموقع؟</p>
+        </div>
+
+        <div class="music-buttons">
+
+            <button id="music-play" class="music-btn primary">
+                Play
+            </button>
+
+            <button id="music-no" class="music-btn secondary">
+                No, thanks
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<audio id="background-music" loop>
+    <source src="music/Sopranos-music-mp3.m4a" type="audio/mpeg">
+</audio>
+
     <header class="header">
     
-        <a class="lang-switch" href="index-ku.html" lang="ku" hreflang="ku" aria-label="Switch to Kurdish" title="کوردی">
-            <i class='bx bx-globe'></i><span class="T">کوردی</span>
-        </a>
-        
+        <div class="language-switcher" translate="no">
+
+    <select id="language-select">
+        <option value="en">English</option>
+        <option value="ku">کوردی</option>
+        <option value="ar">عربي</option>
+    </select>
+
+          <div class="selected-language">
+              <img src="img/translate flag/England-flag.JPG">
+              <span>English</span>
+          </div>
+
+          <div class="language-list">
+
+              <div class="language-item" data-value="en">
+                  <img src="img/translate flag/England-flag.JPG">
+                  English
+              </div>
+
+              <div class="language-item" data-value="ku">
+                  <img src="img/translate flag/kurdstan-flag.JPG">
+                  کوردی
+              </div>
+
+              <div class="language-item" data-value="ar">
+                  <img src="img/translate flag/iraq-flag.JPG">
+                  عربي
+              </div>
+
+          </div>
+
+      </div>
+              
         <a href=" #home" class="logo">Sanhan 
             <span>Soran</span> </a>
             <i class='bx bx-menu' id="menu-icon"></i>
 
             <nav class="navbar">
-                <a href="#home" class="active"> Home </a>
-                <a href="#education">Education</a>
-                <a href="#services">services</a>
-                <a href="#contact">contact</a>
+                <a href="#home" class="active" id="nav-home">Home</a>
+                <a href="#education" id="nav-education">Education</a>
+                <a href="#Timeline" id="nav-Timeline">Timeline</a>
+                <a href="#services" id="nav-services">services</a>
+                <a href="#contact" id="nav-contact">contact</a>
             </nav>
             
     </header>
 
     <section class="home" id="home">
         <div class="home-content">
-            <h1>Hi it’s <span>San</span></h1>
-            <h3 class="text-animation">I’m a <span>
+            <h1 id="home-title">My<span> World</span></h1>
+            <h3 class="text-animation"><span>
             </span></h3>
-            <p> second-year student at <b> Salahaddin University </b> ,
+            <p id="home-bio"> third -year student at <b> Salahaddin University </b> ,
                  studying Computer Science. I finished high 
                  school at <b> Soran High School </b>.
-                  I’m still new to the world of computers ,
+                  I’m new to the world of computers ,
                   This website is where I share 
                   my journey, projects, and everything I’m building as I grow in the tech world</p>
                    
@@ -58,30 +129,29 @@
                    <a href="https://www.facebook.com/share/1CAvXXP6tZ/?mibextid=wwXIfr" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
                    <a href="https://t.me/San7an_Galaly" target="_blank"><i class='bx bxl-telegram'></i></a>
                    <a href="https://www.tiktok.com/@san7an__galaly" target="_blank"><i class='bx bxl-tiktok'></i></a>
+                   <a href="https://www.linkedin.com/in/san7an-galaly-134824421?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
                   </div>
 
                    <div class="btn-group">
-                    <a href="#" class="btn">Hire</a>
-                    <a href="#contact"
-                     class="btn">contact</a>
+                    <a href="#" class="btn" id="btn-hire" >Hire</a>
+                    <a href="#contact"class="btn" id="btn-contact" >contact</a>
                    </div>
            </div>
                     <div class="home-img">
-                     <img src="img/me,web.PNG" alt="Sanhan soran personal photo">
+                     <img src="img/me/me-1.PNG" alt="Sanhan soran personal photo">
                    </div>
         </section>
 
 
     <section class="education" id="education">
-            <h2 class="heading">Education</h2>
-
-    <div class="timeline-items">
+            <h2 class="heading"  id="education-title">Education</h2>
+                <div class="timeline-items">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                         <div class="timeline-date"> 2022 to 2023</div>
+                         <div class="timeline-date" id="edu-11-date"> 2022 to 2023</div>
                          <div class="timeline-content">
-                             <h3>High school Grade 11 </h3>
-                             <p> while I was in Grade 11, I built an &quot;artificial hemodialysis&quot; model as part of a &quot; biology project &quot; at &quot; festival Bonakan Hall &quot;
+                             <h3 id="edu-11-title">High school Grade 11 </h3>
+                             <p id="edu-11-desc"> while I was in Grade 11, I built an &quot;artificial hemodialysis&quot; model as part of a &quot; biology project &quot; at &quot; festival Bonakan Hall &quot;
                                  Using simple materials like containers, tubing, and water flow systems,
                                  I created a working demonstration of how dialysis helps clean blood in patients with kidney failure. I presented this project during the event,
                                   explaining the process to visitors and helping them understand how the system works.
@@ -94,10 +164,10 @@
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                         <div class="timeline-date"> 2023 to 2024</div>
+                         <div class="timeline-date" id="edu-12-date"> 2023 to 2024</div>
                          <div class="timeline-content">
-                             <h3>High school Grade 12 </h3>
-                             <p> During my final year of high school,Grade 12,  I didn’t fully understand computers back then, but something about them pulled me in.
+                             <h3 id="edu-12-title">High school Grade 12 </h3>
+                             <p id="edu-12-desc"> During my final year of high school,Grade 12,  I didn’t fully understand computers back then, but something about them pulled me in.
                                  I didn’t work on a  project that year — my focus was getting a strong final score to reach university. 
                                 Alhamdulillah, I didn’t get the mark I dreamed of, but I still reached my goal. I got accepted into the Computer Science Department, 
                                 just like I planned. That year taught me that it’s not about having a perfect path,
@@ -106,14 +176,12 @@
                     
                 </div>
 
-
-
                   <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                         <div class="timeline-date"> 2024 to 2025</div>
+                         <div class="timeline-date" id="edu-uni1-date">2024 to 2025</div>
                          <div class="timeline-content">
-                             <h3> university first year </h3>
-                             <p>  I started my journey at Salahaddin University, studying Computer Science. That year, I experienced many new things. 
+                             <h3 id="edu-uni1-title">University first year</h3>
+                             <p id="edu-uni1-desc">  I started my journey at Salahaddin University, studying Computer Science. That year, I experienced many new things. 
                                 I attended a festival as a project watcher, where I observed the creative work of students from our department.
                                  I learned some things about computers through the students who built projects in robotics and websites. 
                                 Watching their work taught me a lot and inspired me. Even though I wasn’t presenting, we all received a reward for participating, </p>
@@ -121,111 +189,164 @@
                     
                 </div>
 
-
+                <div class="timeline-item">
+                    <div class="timeline-dot"> </div>
+                         <div class="timeline-date" id="edu-uni2-date">2025 to 2026</div>
+                         <div class="timeline-content">
+                             <h3 id="edu-uni2-title">University second year</h3>
+                             <p id="edu-uni2-desc"> In 2025, I built my first personal website and began learning web development, focusing on HTML, CSS, and JavaScript. Alongside my Computer Science studies,
+                               I explored digital marketing through Instagram, growing a page to over 13,000 followers and achieving more than 10 million views by learning how content and platform algorithms work.
+                               I also began learning how to use AI as a practical tool for different situations, including web development, content creation, and improving my personal projects. </p>
+                           </div>  
+                </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"> </div>
-                         <div class="timeline-date"> 2025 to 2026</div>
+                         <div class="timeline-date" id="edu-uni3-date">2026 to 2027</div>
                          <div class="timeline-content">
-                             <h3> university second year</h3>
-                             <p> In 2025, I built my first personal website. 
-                                 I am currently a second-year Computer Science student at Salahaddin University.
-                                 Alongside my studies, I explored digital marketing,
-                                 and built a reel-based page that grew to over 12,000 followers and achieved more than
-                                 10 million views by understanding and working with platform algorithms </p>
-                           </div>
-                  
+                             <h3 id="edu-uni3-title">University Third Year</h3>
+                             <p id="edu-uni3-desc"> In 2026, I expanded my practical experience by building a big responsive e-commerce website that supports three languages . I used this  website and social media to start exploring online marketing, and sell things .
+                               Although the results were not as successful as I expected, the experience taught me about social media marketing, selling, and the challenges of building something from scratch.
+                               Also I rebuilt my personal website and continued developing my web development skills, while also becoming involved in a marketing team.
+                               In addition, I gained hands-on experience working alongside an engineer on the installation of solar power systems, helping with electrical panels and system setup.
+                               As I enter my third year of Computer Science at Salahaddin University, I continue to develop my skills across technology, business, marketing, and practical work. </p>
+                           </div>  
                 </div>
 
-
-
-     </div>
+        </div>
     </section>
 
+        <section class="proof" id="Timeline">
+      <h2 class="heading" id="proof-title">TimeLine</h2>
+      <div class="proof-items">
 
-     
-    <section class="services" id="services">
-        <h2 class="heading">services</h2>
+        <div class="proof-item">
+          <div class="proof-img">
+            <img src="img/TimeLine/artificial hemodialysis.JPG" alt="Certificate or project proof">
+          </div>
+          <div class="proof-text i18n-rtl">
+            <h3 id="proof-1-title">an Artificial hemodialysis </h3>
+            <p id="proof-1-text">My first biology project, I demonstrated how dialysis cleans blood for patients with kidney failure, presented at the Bonakan Hall Festival</p>
+          </div>
+        </div>
+
+        <div class="proof-item reverse">
+          <div class="proof-img">
+            <img src="img/TimeLine/Grdae 12 & result.JPG" alt="Certificate or project proof">
+          </div>
+          <div class="proof-text i18n-rtl">
+            <h3 id="proof-2-title">Grade 12 Final Score</h3>
+            <p id="proof-2-text">I received my Grade 12 final score and was accepted into the Computer Science Department.</p>
+          </div>
+        </div>
+
+        <div class="proof-item">
+          <div class="proof-img">
+            <img src="img/TimeLine/th.jpg" alt="Certificate or project proof">
+          </div>
+          <div class="proof-text i18n-rtl">
+            <h3 id="proof-3-title">College Project Event</h3>
+            <p id="proof-3-text">I Received a reward for helping organize and support a college project event, welcoming guests and assisting around the project displays.</p>
+          </div>
+        </div>
+
+         <div class="proof-item reverse">
+          <div class="proof-img">
+            <img src="img/TimeLine/first web.png" alt="Certificate or project proof">
+          </div>
+          <div class="proof-text i18n-rtl">
+            <h3 id="proof-4-title">My first website</h3>
+            <p id="proof-4-text">A simple personal website I built as a beginner.</p>
+          </div>
+        </div>
+
+         <div class="proof-item">
+          <div class="proof-img">
+            <img src="img/TimeLine/E-commerce.JPG" alt="Certificate or project proof">
+          </div>
+          <div class="proof-text i18n-rtl">
+            <h3 id="proof-5-title">My E-Commerce Website</h3>
+            <p id="proof-5-text">My biggest project so far, built to start a business through social media. The results were not what I expected, but it gave me real experience in building, selling, and marketing online.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+     <section class="stats" id="stats">
+      <div class="stats-container">
+        <div class="stat-box"><div class="stat-num">13.5K+</div><div class="stat-label" id="stat-1">Followers grown</div></div>
+        <div class="stat-box"><div class="stat-num">10M+</div><div class="stat-label" id="stat-2">Views generated</div></div>
+        <div class="stat-box"><div class="stat-num">3rd Yr</div><div class="stat-label" id="stat-3">Computer Science</div></div>
+        <div class="stat-box"><div class="stat-num">2025</div><div class="stat-label" id="stat-4">Building since</div></div>
+      </div>
+    </section>
+
+        <section class="services" id="services">
+        <h2 class="heading" id="services-title">services</h2>
 
          <div class="services-container">
-                            <div class="services-box">
-                                     <div class="services-info">
-                                         <h4>Video Editor</h4>
-                                         <p>I offer creative and modern video editing for all kinds of content — 
-                                            from short-form videos to professional ads . I use tools like Adobe Premiere Pro,
-                                             CapCut, and AI editing software to create smooth, engaging videos, Whether you need a clean edit for your brand,
-                                             a fast-paced short for social media, or an AI-enhanced clip.</p>
-                                     </div>
-                            </div>
+                <div class="services-box">
+                    <div class="services-icon"><i class='bx bx-movie-play'></i></div>
+                    <span class="services-num">01</span>
+                    <div class="services-info">
+                        <h4 id="service-1-h">Video Editor</h4>
+                        <p id="service-1-p">I offer creative and modern video editing for all kinds of content —
+                            from short-form videos to professional ads . I use tools like Adobe Premiere Pro,
+                            CapCut, and AI editing software to create smooth, engaging videos, Whether you need a clean edit for your brand,
+                            a fast-paced short for social media, or an AI-enhanced clip.</p>
+                    </div>
+                </div>
 
+                <div class="services-box">
+                    <div class="services-icon"><i class='bx bx-trending-up'></i></div>
+                    <span class="services-num">02</span>
+                    <div class="services-info">
+                        <h4 id="service-2-h">social marketing</h4>
+                        <p id="service-2-p"> Social media marketing based on real experience — creating content, using trends and hashtags, growing followers, and reaching more people.
+                        The goal is simple: get your product or business in front of more people and turn attention into potential customers.
+                        Results can vary, and not every post becomes a sale, but every campaign is an opportunity to learn, improve, and grow.</p>
+                    </div>
+                </div>
 
-                             <div class="services-box">
-                                     <div class="services-info">
-                                         <h4> social marketing</h4>
-                                         <p>I’m not a professional, but I know how to use social media to sell and promote products. I’ve learned how to create posts, use trends, hashtags,
-                                             and basic strategies to reach more people. Whether it’s promoting a small business, a product, or an idea,
-                                             I like the process of making content that gets attention and drives results. but I’m confident in what I can do 
-                                         </p>
-                                     </div>
-                            </div>
-
-
-
-                            
-                             <div class="services-box">
-                                     <div class="services-info">
-                                         <h4>frontend , C++</h4>
-                                         <p>`I’m currently learning frontend development . I know the basics of HTML and CSS, and I’m starting to explore how websites are made and styled .
-                                             I’ve also studied C++ and understand how it works as a programming language, especially in logic and problem-solving.
-                                         </p>
-                                     </div>
-                            </div>
+                <div class="services-box">
+                    <div class="services-icon"><i class='bx bx-code-alt'></i></div>
+                    <span class="services-num">03</span>
+                    <div class="services-info">
+                        <h4 id="service-3-h">Frontend Development | C++</h4>
+                        <p id="service-3-p">I have hands-on experience building responsive websites using **HTML, CSS, and JavaScript**, including an e-commerce website project. I can create and style complete web pages, make them responsive for different screen sizes, add animations and interactive features, and work with multilingual content. I also use AI tools as a development assistant to improve my code, solve problems, and achieve better results while continuing to understand the solutions I build.
+                        I also have a strong foundation in **C++**, with good knowledge of programming logic, problem-solving, functions, arrays, pointers, classes, and object-oriented programming. I’m continuing to improve my overall programming skills, .</p>
+                    </div>
+                </div>
          </div>
-                         
 
-    </section>          
-
-
-
-
-
+      </section>
 
     <section class="contact" id="contact">
-
-          <h2 class="heading">contact <span>me</span>
-          </h2>
-
+          <h2 class="heading" id="contact-title" >contact </h2>
           <form action="">
-            <div class="input-group">
-                     <div class="input-box">
-                        <input type="text"
-                        placeholder="Full name">
-                        <input type="email"
-                        placeholder="Email">
-                    </div>
+                <div class="input-group">
+                        <div class="input-box">
+                            <input type="text" id="contact-fullname"
+                            placeholder="Full name">
+                            <input type="email" id="contact-email"
+                            placeholder="Email">
+                        </div>
 
-                    <div class="input-box">
-                        <input type="number" 
-                        placeholder="Phone number">
-                        <input type="text"
-                        placeholder="subject">
-                    </div>
-            </div>
+                        <div class="input-box">
+                            <input type="number" id="contact-phone"
+                            placeholder="Phone number">
+                            <input type="text" id="contact-subject"
+                            placeholder="subject">
+                        </div>
+                </div>
 
-
-            <div class="input-group-2">
-                <textarea name="" id="" cols="30"
-                rows="10" placeholder="your message"></textarea>
-                <input type="submit" value="send message" class="btn">
-            </div>
-
-
-
+                <div class="input-group-2">
+                    <textarea name="" id="contact-message" cols="30"
+                    rows="7" placeholder="your message"></textarea>
+                    <input type="submit" id="contact-send" value="send message" class="btn">
+                </div>
           </form>
-
-
-
-
 
     </section>
 
@@ -235,23 +356,24 @@
                 <a href="https://www.facebook.com/share/1CAvXXP6tZ/?mibextid=wwXIfr"target="_blank"><i class='bx bxl-facebook-circle'></i></a>
                 <a href="https://t.me/San7an_Galaly"target="_blank"><i class='bx bxl-telegram'></i></a>
                 <a href="https://www.tiktok.com/@san7an__galaly" target="_blank"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.linkedin.com/in/san7an-galaly-134824421?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
               </div>
 
               <ul class="list">
                    <li>
-                      <a href="#">FAQ</a>
+                      <a href="#" id="footer-faq" >FAQ</a>
                    </li>
 
                    <li>
-                      <a href="#">services</a>
+                      <a href="#" id="footer-services">services</a>
                    </li>
 
                    <li>
-                      <a href="#">About me</a>
+                      <a href="#" id="footer-about">About me</a>
                    </li>
 
                    <li>
-                      <a href="#">contact</a>
+                      <a href="#" id="footer-contact">contact</a>
                    </li>
               </ul>
             <p>@captainsaha05</p>
